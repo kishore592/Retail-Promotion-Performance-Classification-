@@ -1,0 +1,39 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# ChromaDB generated data
+**/chroma/
+chroma/
+
+# Node
+node_modules/
+.next/
+out/
+dist/
+
+# Logs
+*.log
+
+# Temporary project copies
+*.zip
+extracted_project/
+retail-promotion-performance-classification/
+
+# IDE / OS
+.vscode/
+.DS_Store
