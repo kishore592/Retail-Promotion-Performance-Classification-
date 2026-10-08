@@ -172,9 +172,13 @@ class PersistentStore:
             self.metrics["latency_ms"] = self.metrics["latency_ms"][-1000:]
 
     async def health_check(self):
-        async with AsyncSessionLocal() as db:
-            await db.execute(select(func.count()).select_from(Workflow))
-        return True
+        try:
+            async with AsyncSessionLocal() as db:
+                await db.execute(select(func.count()).select_from(Workflow))
+            return True
+        except Exception as exc:
+            print(f"DATABASE_HEALTH_CHECK_ERROR: {type(exc).__name__}: {exc}", flush=True)
+            return False
 
 
 store = PersistentStore()
