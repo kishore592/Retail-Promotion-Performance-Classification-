@@ -37,3 +37,8 @@ retail-promotion-performance-classification/
 # IDE / OS
 .vscode/
 .DS_Store
+
+# Local SQLite databases
+*.db
+*.db-shm
+*.db-wal
